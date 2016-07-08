@@ -27,12 +27,6 @@ Class WPIMLogging extends WPIMCore {
 		// Only initializes this class if WP Inventory Manager is running / loaded
 		add_action( 'wpim_core_loaded', array( __CLASS__, 'initialize' ) );
 		add_filter( 'wpim_default_config', array( __CLASS__, 'wpim_default_config' ) );
-	}
-
-	/**
-	 * Initialize the plugin to hook into the relevant actions / filters
-	 */
-	public static function initialize() {
 		add_action( 'wpim_edit_settings_general', array( __CLASS__, 'wpim_edit_settings' ) );
 		add_action( 'wpim_admin_menu', array( __CLASS__, 'wpim_admin_menu' ) );
 
@@ -203,6 +197,7 @@ Class WPIMLogging extends WPIMCore {
 	 * Displays the WPIM Admin Settings
 	 */
 	public static function wpim_edit_settings() {
+		echo '<tr class="subtab"><th colspan="2"><h4>' . WPIMCore::__('Logging Settings') . '</h4></th></tr>';
 		echo '<tr><th>' . WPIMCore::__( 'Enable Logging' ) . '</th>';
 		echo '<td>';
 		echo WPIMAdmin::dropdown_yesno( self::$config_key_name_field, self::$logging_enabled );
