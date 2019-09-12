@@ -104,7 +104,7 @@ Class WPIMLogging extends WPIMCore {
 		}
 
 		foreach ( $filters AS $filter ) {
-			if ( ! empty( $wp_filter[ $filter ] ) && count( $wp_filter[ $filter ] ) > 2 ) {
+			if ( ! empty( $wp_filter[ $filter ] ) ) { // && count( $wp_filter[ $filter ] ) > 2 ) {
 				if ( ! isset( self::$wpim_filter_values[ $filter ] ) ) {
 					self::$wpim_filter_values[ $filter ] = $value;
 				} else {
