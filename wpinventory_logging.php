@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function activate_wpim_logging() {
 	$min_version = '1.3.2';
 	if ( ! WPIMCore::check_version( $min_version, 'Inventory Logging' ) ) {
-		return;
+//		return;
 	}
 
 	add_action( 'wpim_core_loaded', 'launch_wpim_logging' );

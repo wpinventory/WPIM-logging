@@ -177,6 +177,7 @@ Class WPIMLogging extends WPIMCore {
 		if ( self::request( 'clear_log' ) ) {
 			self::empty_log();
 		}
+
 		echo '<h3>' . WPIMCore::__( 'WP Inventory Logging' ) . '</h3>';
 		echo '<a class="button" href="' . admin_url( 'admin.php?page=' . $_GET['page'] ) . '&clear_log=true">' . WPIMCore::__( 'Clear Log' ) . '</a>';
 		echo '<h4>' . WPIMCore::__( 'Log File' ) . '</h4>';
