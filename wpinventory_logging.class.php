@@ -211,7 +211,7 @@ Class WPIMLogging extends WPIMCore {
 	 * Displays the WPIM Admin Settings
 	 */
 	public static function wpim_edit_settings() {
-		echo '<tr class="subtab"><th colspan="2"><h4>' . WPIMCore::__( 'Logging Settings' ) . '</h4></th></tr>';
+		echo '<tr class="subtab"><th colspan="2"><h4 data-tab="logging_settings">' . WPIMCore::__( 'Logging Settings' ) . '</h4></th></tr>';
 		echo '<tr><th>' . WPIMCore::__( 'Enable Logging' ) . '</th>';
 		echo '<td>';
 		echo WPIMAdmin::dropdown_yesno( self::$config_key_name_field, self::$logging_enabled );
