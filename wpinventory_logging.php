@@ -34,9 +34,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function activate_wpim_logging() {
 	$min_version = '1.3.2';
-	if ( ! WPIMCore::check_version( $min_version, 'Inventory Logging' ) ) {
+	// Commented out per Chuck on 11/13/2019 - don't want the "Requires a licensed copy of WPIM" to appear
+//	if ( ! WPIMCore::check_version( $min_version, 'Inventory Logging' ) ) {
 //		return;
-	}
+//	}
 
 	add_action( 'wpim_core_loaded', 'launch_wpim_logging' );
 }
