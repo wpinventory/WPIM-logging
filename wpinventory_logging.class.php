@@ -25,11 +25,10 @@ Class WPIMLogging extends WPIMCore {
 	 */
 	public static function start() {
 		// Only initializes this class if WP Inventory Manager is running / loaded
-		add_action( 'wpim_core_loaded', array( __CLASS__, 'initialize' ) );
-		add_filter( 'wpim_default_config', array( __CLASS__, 'wpim_default_config' ) );
-		add_action( 'wpim_edit_settings_general', array( __CLASS__, 'wpim_edit_settings' ) );
-		add_action( 'wpim_admin_menu', array( __CLASS__, 'wpim_admin_menu' ) );
-
+		add_action( 'wpim_core_loaded', [ __CLASS__, 'initialize' ] );
+		add_filter( 'wpim_default_config', [ __CLASS__, 'wpim_default_config' ] );
+		add_action( 'wpim_edit_settings_general', [ __CLASS__, 'wpim_edit_settings' ] );
+		add_action( 'wpim_admin_menu', [ __CLASS__, 'wpim_admin_menu' ] );
 
 		self::$file_name             = dirname( __FILE__ ) . '/' . self::$file_name;
 		self::$logging_enabled       = wpinventory_get_config( self::$config_key_name_field );
@@ -145,10 +144,6 @@ Class WPIMLogging extends WPIMCore {
 		}
 	}
 
-	/**
-	 * WordPress init action.
-	 * Hooks into the breadcrumb actions / filters, if they exist.
-	 */
 	public static function init() {
 	}
 
@@ -187,6 +182,8 @@ Class WPIMLogging extends WPIMCore {
 		echo '</div>';
 
 		global $wp_version, $wpdb;
+		echo '<div class="wpim_environment_info">';
+		echo '<p><a class="button-primary" href="' . plugins_url() . '/wp-inventory-logging/wpinventory_debug_log.txt" target="_blank">View Log</a><br><small>This will allow you to view in separate window to "Save As" from your browser.  Send that file to support@wpinventory.com</small></p>';
 		echo '<h4>' . WPIMCore::__( 'Server Info' ) . '</h4>';
 		echo '<ul>';
 		echo '<li>PHP Version ' . phpversion() . '</li>';
@@ -205,6 +202,7 @@ Class WPIMLogging extends WPIMCore {
 			}
 		}
 		echo '</ol>';
+		echo '</div>';
 	}
 
 	/**
@@ -232,10 +230,10 @@ Class WPIMLogging extends WPIMCore {
 	 * do_action( 'http_api_debug', $response, 'response', $class, $args, $url );
 	 *
 	 * @param array|WP_Error $response HTTP response or WP_Error object.
-	 * @param string $context Context under which the hook is fired.
-	 * @param string $class HTTP transport used.
-	 * @param array $args HTTP request arguments.
-	 * @param string $url The request URL.
+	 * @param string         $context  Context under which the hook is fired.
+	 * @param string         $class    HTTP transport used.
+	 * @param array          $args     HTTP request arguments.
+	 * @param string         $url      The request URL.
 	 */
 	public static function http_api_debug( $response, $context, $class, $args, $url ) {
 		$response_caller = 'RESPONSE: ';
@@ -253,7 +251,7 @@ Class WPIMLogging extends WPIMCore {
 	/**
 	 * Write the event to the log.
 	 *
-	 * @param $string
+	 * @param      $string
 	 * @param null $caller
 	 * @param bool $parse_actions
 	 */
@@ -316,9 +314,9 @@ Class WPIMLogging extends WPIMCore {
 			var_dump( $string );
 			$string = ob_get_clean();
 			$string = strip_tags( $string );
-			$string =htmlspecialchars_decode( $string );
+			$string = htmlspecialchars_decode( $string );
 		} else {
-			$string.= '<br>';
+			$string .= '<br>';
 		}
 		file_put_contents( self::$file_name, $date . ' - ' . $caller . ' - ' . $string, FILE_APPEND );
 		file_put_contents( self::$file_name, str_repeat( '-', 30 ) . '<br>', FILE_APPEND );
