@@ -169,6 +169,8 @@ Class WPIMLogging extends WPIMCore {
 	}
 
 	public static function admin_wpim_logging() {
+		global $wp_version, $wpdb;
+		
 		if ( self::request( 'clear_log' ) ) {
 			self::empty_log();
 		}
@@ -181,9 +183,13 @@ Class WPIMLogging extends WPIMCore {
 		echo $log;
 		echo '</div>';
 
-		global $wp_version, $wpdb;
 		echo '<div class="wpim_environment_info">';
-		echo '<p><a class="button-primary" href="' . plugins_url() . '/wp-inventory-logging/wpinventory_debug_log.txt" target="_blank">View Log</a><br><small>This will allow you to view in separate window to "Save As" from your browser.  Send that file to support@wpinventory.com</small></p>';
+		if ( strlen( $log ) > 20 ) {
+			echo '<div><a class="button-primary" href="' . plugins_url() . '/wp-inventory-logging/wpinventory_debug_log.txt" target="_blank">' . WPIMCore::__( 'View Log' ) . '</a>';
+			echo '<p class="description">' . self::__( 'This will allow you to view in separate window to "Save As" from your browser.  Send that file to support@wpinventory.com' ) . '</p>';
+			echo '</div>';
+		}
+
 		echo '<h4>' . WPIMCore::__( 'Server Info' ) . '</h4>';
 		echo '<ul>';
 		echo '<li>PHP Version ' . phpversion() . '</li>';
