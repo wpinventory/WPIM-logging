@@ -38,6 +38,16 @@ Class WPIMLogging extends WPIMCore {
 		if ( is_admin() && ! empty( $_GET['page'] ) && 'wpim_logging' == $_GET['page'] ) {
 			self::$logging_enabled       = FALSE;
 			self::$log_to_screen_enabled = FALSE;
+
+			if ( ! empty( $_GET['download'] ) ) {
+				if ( file_exists( self::$file_name ) ) {
+					$file = 'wpinventory-logging-' . date( 'Y-m-d-h-i-s' ) . '.txt';
+					header( "Content-Disposition: attachment; filename='" . $file . "'" );
+					header( "Content-Length: " . filesize( self::$file_name ) );
+					header( "Content-Type: application/octet-stream;" );
+					readfile( self::$file_name );
+				}
+			}
 		}
 
 		if ( (int) self::$logging_enabled || (int) self::$log_to_screen_enabled ) {
@@ -170,13 +180,15 @@ Class WPIMLogging extends WPIMCore {
 
 	public static function admin_wpim_logging() {
 		global $wp_version, $wpdb;
-		
+
 		if ( self::request( 'clear_log' ) ) {
 			self::empty_log();
 		}
 
+		$self_url = admin_url( 'admin.php?page=' . $_GET['page'] );
+
 		echo '<h3>' . WPIMCore::__( 'WP Inventory Logging' ) . '</h3>';
-		echo '<a class="button" href="' . admin_url( 'admin.php?page=' . $_GET['page'] ) . '&clear_log=true">' . WPIMCore::__( 'Clear Log' ) . '</a>';
+		echo '<a class="button" href="' . add_query_arg( 'clear_log', 'true', $self_url ) . '">' . WPIMCore::__( 'Clear Log' ) . '</a>';
 		echo '<h4>' . WPIMCore::__( 'Log File' ) . '</h4>';
 		echo '<div id="wpim_log" style="border: 2px solid #888; background: white; padding: 10px; margin: 20px; font-family: monospace; white-space: pre; max-height: 400px; overflow-y: scroll;">';
 		$log = file_get_contents( self::$file_name );
@@ -185,8 +197,8 @@ Class WPIMLogging extends WPIMCore {
 
 		echo '<div class="wpim_environment_info">';
 		if ( strlen( $log ) > 20 ) {
-			echo '<div><a class="button-primary" href="' . plugins_url() . '/wp-inventory-logging/wpinventory_debug_log.txt" target="_blank">' . WPIMCore::__( 'View Log' ) . '</a>';
-			echo '<p class="description">' . self::__( 'This will allow you to view in separate window to "Save As" from your browser.  Send that file to support@wpinventory.com' ) . '</p>';
+			echo '<div><a class="button-primary" href="' . add_query_arg( 'download', 'true', $self_url ) . '">' . WPIMCore::__( 'Download Log' ) . '</a>';
+			echo '<p class="description">' . self::__( 'This will allow you to download the log, in the event you are asked to send a log to support@wpinventory.com' ) . '</p>';
 			echo '</div>';
 		}
 
