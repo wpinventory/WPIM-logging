@@ -42,7 +42,7 @@ Class WPIMLogging extends WPIMCore {
 			if ( ! empty( $_GET['download'] ) ) {
 				if ( file_exists( self::$file_name ) ) {
 					$file = 'wpinventory-logging-' . date( 'Y-m-d-h-i-s' ) . '.txt';
-					header( "Content-Disposition: attachment; filename='" . $file . "'" );
+					header( "Content-Disposition: attachment; filename=" . $file . "" );
 					header( "Content-Length: " . filesize( self::$file_name ) );
 					header( "Content-Type: application/octet-stream;" );
 					readfile( self::$file_name );

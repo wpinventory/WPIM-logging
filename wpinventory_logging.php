@@ -4,9 +4,9 @@
  * Plugin Name:    WP Inventory Logging Add On
  * Plugin URI:    http://www.wpinventory.com
  * Description:   PLEASE DO NOT INSTALL this unless you've been asked to by WP Inventory Support.  This plugin provides debugging and logging information in order to help troubleshoot support issues on customer sites.
- * Version:        0.5.1
+ * Version:        0.5.2
  * Author:        WP Inventory Manager
- * Author URI:    http://www.wpinventory.com/
+ * Author URI:    https://www.wpinventory.com/
  * Text Domain:    wpinventory
  *
  * ------------------------------------------------------------------------
