@@ -185,10 +185,10 @@ Class WPIMLogging extends WPIMCore {
 			self::empty_log();
 		}
 
-		$self_url = admin_url( 'admin.php?page=' . $_GET['page'] );
+		$clear_url = self::admin_log_url( TRUE );
 
 		echo '<h3>' . WPIMCore::__( 'WP Inventory Logging' ) . '</h3>';
-		echo '<a class="button" href="' . add_query_arg( 'clear_log', 'true', $self_url ) . '">' . WPIMCore::__( 'Clear Log' ) . '</a>';
+		echo '<a class="button" href="' . $clear_url . '">' . WPIMCore::__( 'Clear Log' ) . '</a>';
 		echo '<h4>' . WPIMCore::__( 'Log File' ) . '</h4>';
 		echo '<div id="wpim_log" style="border: 2px solid #888; background: white; padding: 10px; margin: 20px; font-family: monospace; white-space: pre; max-height: 400px; overflow-y: scroll;">';
 		$log = file_get_contents( self::$file_name );
@@ -227,11 +227,16 @@ Class WPIMLogging extends WPIMCore {
 	 * Displays the WPIM Admin Settings
 	 */
 	public static function wpim_edit_settings() {
+		$clear_url = self::admin_log_url( TRUE );
+
 		echo '<tr class="subtab"><th colspan="2"><h4 data-tab="logging_settings">' . WPIMCore::__( 'Logging Settings' ) . '</h4></th></tr>';
 		echo '<tr><th>' . WPIMCore::__( 'Enable Logging' ) . '</th>';
 		echo '<td>';
 		echo WPIMAdmin::dropdown_yesno( self::$config_key_name_field, self::$logging_enabled );
 		echo '</td>';
+		echo '</tr>';
+		echo '<tr><th>' . WPIMCore::__( 'Clear Log' ) . '</th>';
+		echo '<td><a href="' . $clear_url. '">' . WPIMCore::__( 'Clear' ) . '</a></td>';
 		echo '</tr>';
 		echo '<tr><th>' . WPIMCore::__( 'Log to Screen' ) . '</th>';
 		echo '<td>';
@@ -239,6 +244,15 @@ Class WPIMLogging extends WPIMCore {
 		echo '<p class="description">' . WPIMCore::__( 'WARNING: This will be very "noisy" to the screen, and may interfere with some functionality' ) . '</p>';
 		echo '</td>';
 		echo '</tr>';
+	}
+
+	public static function admin_log_url( $clear = FALSE ) {
+		$self_url = admin_url( 'admin.php?page=wpim_logging' );
+		if ( $clear ) {
+			$self_url = add_query_arg( 'clear_log', 'true', $self_url );
+		}
+
+		return $self_url;
 	}
 
 	/**
