@@ -1,1 +1,306 @@
 
+2020-08-19 16:4 - do_action (31)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=2)
+  'Action' => string 'wpim_core_loaded' (length=16)
+  'Value' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - WPIMCore::get_add_ons (995)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_add_ons_list' (length=17)
+  'Value Before' => 
+    array (size=11)
+      0 => 
+        object(stdClass)[871]
+          public 'title' => string 'Ledger' (length=6)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/inventory_ledger.png' (length=90)
+          public 'description' => string '<p>Track additions and subtractions to your inventory <strong>with ease!</strong>' (length=81)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/ledger-add-on-records/' (length=90)
+          public 'key' => string 'ledger' (length=6)
+          public 'item_name' => string 'Add-On: Ledger' (length=14)
+          public 'item_id' => int 651
+      1 => 
+        object(stdClass)[979]
+          public 'title' => string 'Import / Export' (length=15)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/import_export.png' (length=87)
+          public 'description' => string '<p>Import CSV files to your inventory, and export your inventory at any time.</p>' (length=81)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/importing-exporting-inventory/' (length=98)
+          public 'key' => string 'import_export' (length=13)
+          public 'item_name' => string 'Add-On: Import and Export' (length=25)
+          public 'item_id' => int 655
+          public 'installed' => boolean true
+      2 => 
+        object(stdClass)[980]
+          public 'title' => string 'Advanced User Control' (length=21)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/advanced_user_control.png' (length=95)
+          public 'description' => string '<p>Provides detailed control over each user and their permissions for inventory items.</p>' (length=90)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/specific-user-control/' (length=90)
+          public 'key' => string 'advanced_user' (length=13)
+          public 'item_name' => string 'Add-On: Advanced User Control' (length=29)
+          public 'item_id' => int 1275
+      3 => 
+        object(stdClass)[981]
+          public 'title' => string 'Bulk Item Manager' (length=17)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/bulk_item_manager.png' (length=91)
+          public 'description' => string '<p>Powerful tool for deleting and updating items in bulk.  Select based on a variety of criteria, preview the changes, and more.</p>' (length=132)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/bulk-item-management/' (length=89)
+          public 'key' => string 'bulk_item' (length=9)
+          public 'item_name' => string 'Add-On: Bulk Item Manager' (length=25)
+          public 'item_id' => int 1437
+          public 'installed' => boolean true
+      4 => 
+        object(stdClass)[982]
+          public 'title' => string 'Advanced Inventory Manager' (length=26)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/advanced_inventory_manager.png' (length=100)
+          public 'description' => string '<p>Add more fields, manage the kinds of fields (including drop-downs, radio buttons, and more), support different types of inventory, and more.</p>' (length=147)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/advanced-inventory-manager/' (length=95)
+          public 'key' => string 'advanced_inventory' (length=18)
+          public 'item_name' => string 'Add-On: Advanced Inventory Manager' (length=34)
+          public 'item_id' => int 2917
+          public 'installed' => boolean true
+          public 'version' => string '1.3.6' (length=5)
+      5 => 
+        object(stdClass)[983]
+          public 'title' => string 'Reservations Cart' (length=17)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/reserve_cart.png' (length=86)
+          public 'description' => string '<p>Allow reserving multiple items at the same time.  Provides a cart for your customers to add items to, and reserve them all at once.</p>' (length=138)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/reserve-cart/' (length=55)
+          public 'key' => string 'reserve_cart' (length=12)
+          public 'item_name' => string 'Add-On: Reserve Cart' (length=20)
+          public 'item_id' => int 5376
+          public 'installed' => boolean true
+      6 => 
+        object(stdClass)[984]
+          public 'title' => string 'Locations Manager' (length=17)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/locations_manager.png' (length=92)
+          public 'description' => string '<p>Easily manage inventory quantities for all of your locations.  Add as many locations or as few as you want and start managing inventory for each.</p>' (length=152)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/managing-inventory-locations/' (length=97)
+          public 'key' => string 'locations_manager' (length=17)
+          public 'item_name' => string 'Add-On: Locations Manager' (length=25)
+          public 'item_id' => int 13153
+      7 => 
+        object(stdClass)[985]
+          public 'title' => string 'Advanced Search' (length=15)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/advanced_search.png' (length=90)
+          public 'description' => string '<p>Provides powerful Amazon-like searching. Allow searching by a variety of fields, including price range.</p>' (length=110)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/advanced-search-filter/' (length=91)
+          public 'key' => string 'advanced_search' (length=15)
+          public 'item_name' => string 'Add-On: Advanced Search' (length=23)
+          public 'item_id' => int 14294
+          public 'installed' => boolean true
+      8 => 
+        object(stdClass)[986]
+          public 'title' => string 'Notifications' (length=13)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/notifications.png' (length=88)
+          public 'description' => string '<p>Send email notification alerts based on low quantity set per item.  Settings per item override the global notification quantity alert.</p>' (length=141)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/downloads/add-on-notifications/' (length=59)
+          public 'key' => string 'wpinventory_notifications' (length=25)
+          public 'item_name' => string 'Add-On: Notifications' (length=21)
+          public 'item_id' => int 96241
+          public 'installed' => boolean true
+      9 => 
+        object(stdClass)[987]
+          public 'title' => string 'WP Inventory Stripe Payments' (length=28)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/stripe.png' (length=81)
+          public 'description' => string '<p>This add on allows you to sell items at the reservation checkout.  Works with core and reserve cart add on.</p>' (length=114)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/downloads/stripe-payment-gateway/' (length=61)
+          public 'key' => string 'wpim_stripe_gateway' (length=19)
+          public 'item_name' => string 'Add-On: Stripe' (length=14)
+          public 'item_id' => int 36202
+      10 => 
+        object(stdClass)[988]
+          public 'title' => string 'WP Inventory Disable Detail Page' (length=32)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/disable_detail_page.png' (length=94)
+          public 'description' => string '<p>Sometimes the listing page tells the whole story.  No need for a detail page.</p>' (length=84)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/downloads/add-on-disable-detail-page/' (length=65)
+          public 'key' => string 'wpinventory_disable_detail_page' (length=31)
+          public 'item_name' => string 'Add-On: Disable Detail Page' (length=27)
+          public 'item_id' => int 107799
+  'Value After' => 
+    array (size=11)
+      0 => 
+        object(stdClass)[871]
+          public 'title' => string 'Ledger' (length=6)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/inventory_ledger.png' (length=90)
+          public 'description' => string '<p>Track additions and subtractions to your inventory <strong>with ease!</strong>' (length=81)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/ledger-add-on-records/' (length=90)
+          public 'key' => string 'ledger' (length=6)
+          public 'item_name' => string 'Add-On: Ledger' (length=14)
+          public 'item_id' => int 651
+      1 => 
+        object(stdClass)[979]
+          public 'title' => string 'Import / Export' (length=15)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/import_export.png' (length=87)
+          public 'description' => string '<p>Import CSV files to your inventory, and export your inventory at any time.</p>' (length=81)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/importing-exporting-inventory/' (length=98)
+          public 'key' => string 'import_export' (length=13)
+          public 'item_name' => string 'Add-On: Import and Export' (length=25)
+          public 'item_id' => int 655
+          public 'installed' => boolean true
+      2 => 
+        object(stdClass)[980]
+          public 'title' => string 'Advanced User Control' (length=21)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/advanced_user_control.png' (length=95)
+          public 'description' => string '<p>Provides detailed control over each user and their permissions for inventory items.</p>' (length=90)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/specific-user-control/' (length=90)
+          public 'key' => string 'advanced_user' (length=13)
+          public 'item_name' => string 'Add-On: Advanced User Control' (length=29)
+          public 'item_id' => int 1275
+      3 => 
+        object(stdClass)[981]
+          public 'title' => string 'Bulk Item Manager' (length=17)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/bulk_item_manager.png' (length=91)
+          public 'description' => string '<p>Powerful tool for deleting and updating items in bulk.  Select based on a variety of criteria, preview the changes, and more.</p>' (length=132)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/bulk-item-management/' (length=89)
+          public 'key' => string 'bulk_item' (length=9)
+          public 'item_name' => string 'Add-On: Bulk Item Manager' (length=25)
+          public 'item_id' => int 1437
+          public 'installed' => boolean true
+      4 => 
+        object(stdClass)[982]
+          public 'title' => string 'Advanced Inventory Manager' (length=26)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/advanced_inventory_manager.png' (length=100)
+          public 'description' => string '<p>Add more fields, manage the kinds of fields (including drop-downs, radio buttons, and more), support different types of inventory, and more.</p>' (length=147)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/advanced-inventory-manager/' (length=95)
+          public 'key' => string 'advanced_inventory' (length=18)
+          public 'item_name' => string 'Add-On: Advanced Inventory Manager' (length=34)
+          public 'item_id' => int 2917
+          public 'installed' => boolean true
+          public 'version' => string '1.3.6' (length=5)
+      5 => 
+        object(stdClass)[983]
+          public 'title' => string 'Reservations Cart' (length=17)
+          public 'image' => string 'http://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/reserve_cart.png' (length=86)
+          public 'description' => string '<p>Allow reserving multiple items at the same time.  Provides a cart for your customers to add items to, and reserve them all at once.</p>' (length=138)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/reserve-cart/' (length=55)
+          public 'key' => string 'reserve_cart' (length=12)
+          public 'item_name' => string 'Add-On: Reserve Cart' (length=20)
+          public 'item_id' => int 5376
+          public 'installed' => boolean true
+      6 => 
+        object(stdClass)[984]
+          public 'title' => string 'Locations Manager' (length=17)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/locations_manager.png' (length=92)
+          public 'description' => string '<p>Easily manage inventory quantities for all of your locations.  Add as many locations or as few as you want and start managing inventory for each.</p>' (length=152)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/managing-inventory-locations/' (length=97)
+          public 'key' => string 'locations_manager' (length=17)
+          public 'item_name' => string 'Add-On: Locations Manager' (length=25)
+          public 'item_id' => int 13153
+      7 => 
+        object(stdClass)[985]
+          public 'title' => string 'Advanced Search' (length=15)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/advanced_search.png' (length=90)
+          public 'description' => string '<p>Provides powerful Amazon-like searching. Allow searching by a variety of fields, including price range.</p>' (length=110)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/documentation/user/add-on-documentation/advanced-search-filter/' (length=91)
+          public 'key' => string 'advanced_search' (length=15)
+          public 'item_name' => string 'Add-On: Advanced Search' (length=23)
+          public 'item_id' => int 14294
+          public 'installed' => boolean true
+      8 => 
+        object(stdClass)[986]
+          public 'title' => string 'Notifications' (length=13)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/notifications.png' (length=88)
+          public 'description' => string '<p>Send email notification alerts based on low quantity set per item.  Settings per item override the global notification quantity alert.</p>' (length=141)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/downloads/add-on-notifications/' (length=59)
+          public 'key' => string 'wpinventory_notifications' (length=25)
+          public 'item_name' => string 'Add-On: Notifications' (length=21)
+          public 'item_id' => int 96241
+          public 'installed' => boolean true
+      9 => 
+        object(stdClass)[987]
+          public 'title' => string 'WP Inventory Stripe Payments' (length=28)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/stripe.png' (length=81)
+          public 'description' => string '<p>This add on allows you to sell items at the reservation checkout.  Works with core and reserve cart add on.</p>' (length=114)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/downloads/stripe-payment-gateway/' (length=61)
+          public 'key' => string 'wpim_stripe_gateway' (length=19)
+          public 'item_name' => string 'Add-On: Stripe' (length=14)
+          public 'item_id' => int 36202
+      10 => 
+        object(stdClass)[988]
+          public 'title' => string 'WP Inventory Disable Detail Page' (length=32)
+          public 'image' => string 'https://www.wpinventory.com/wp-content/themes/wpinventory/images/icons/disable_detail_page.png' (length=94)
+          public 'description' => string '<p>Sometimes the listing page tells the whole story.  No need for a detail page.</p>' (length=84)
+          public 'learn_more_url' => string 'https://www.wpinventory.com/downloads/add-on-disable-detail-page/' (length=65)
+          public 'key' => string 'wpinventory_disable_detail_page' (length=31)
+          public 'item_name' => string 'Add-On: Disable Detail Page' (length=27)
+          public 'item_id' => int 107799
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=2)
+  'Action' => string 'wpim_activate_plugin' (length=20)
+  'Value' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=2)
+  'Action' => string 'wpim_activate_plugin' (length=20)
+  'Value' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=2)
+  'Action' => string 'wpim_activate_plugin' (length=20)
+  'Value' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=2)
+  'Action' => string 'wpim_activate_plugin' (length=20)
+  'Value' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=2)
+  'Action' => string 'wpim_activate_plugin' (length=20)
+  'Value' => string '' (length=0)
+------------------------------<br>2020-08-19 16:4 - do_action (729)  - 
+/Users/calebergh/Sites/wp_inventory/wp-content/plugins/wpinventory_logging/wpinventory_logging.class.php:332:
+array (size=3)
+  'Filter' => string 'wpim_activate_plugin' (length=20)
+  'Value Before' => string '' (length=0)
+  'Value After' => string '' (length=0)
+------------------------------<br>
