@@ -197,7 +197,7 @@ Class WPIMLogging extends WPIMCore {
 
 		echo '<div class="wpim_environment_info">';
 		if ( strlen( $log ) > 20 ) {
-			echo '<div><a class="button-primary" href="' . add_query_arg( 'download', 'true', $self_url ) . '">' . WPIMCore::__( 'Download Log' ) . '</a>';
+			echo '<div><a class="button-primary" href="' . add_query_arg( 'download', 'true', admin_url( 'admin.php?page=wpim_logging' ) ) . '">' . WPIMCore::__( 'Download Log' ) . '</a>';
 			echo '<p class="description">' . self::__( 'This will allow you to download the log, in the event you are asked to send a log to support@wpinventory.com' ) . '</p>';
 			echo '</div>';
 		}
@@ -236,7 +236,7 @@ Class WPIMLogging extends WPIMCore {
 		echo '</td>';
 		echo '</tr>';
 		echo '<tr><th>' . WPIMCore::__( 'Clear Log' ) . '</th>';
-		echo '<td><a href="' . $clear_url. '">' . WPIMCore::__( 'Clear' ) . '</a></td>';
+		echo '<td><a href="' . $clear_url . '">' . WPIMCore::__( 'Clear' ) . '</a></td>';
 		echo '</tr>';
 		echo '<tr><th>' . WPIMCore::__( 'Log to Screen' ) . '</th>';
 		echo '<td>';
