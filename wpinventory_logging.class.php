@@ -15,10 +15,10 @@ Class WPIMLogging extends WPIMCore {
 
 	private static $file_name = 'wpinventory_debug_log.txt';
 
-	private static $wpim_filters = array();
-	private static $wpim_actions = array();
+	private static $wpim_filters = [];
+	private static $wpim_actions = [];
 
-	private static $wpim_filter_values = array();
+	private static $wpim_filter_values = [];
 
 	/**
 	 * First call.  Continues only if Inventory Manager is Installed
@@ -42,7 +42,7 @@ Class WPIMLogging extends WPIMCore {
 			if ( ! empty( $_GET['download'] ) ) {
 				if ( file_exists( self::$file_name ) ) {
 					$file = 'wpinventory-logging-' . date( 'Y-m-d-h-i-s' ) . '.txt';
-					header( "Content-Disposition: attachment; filename='" . $file . "'" );
+					header( "Content-Disposition: attachment; filename=what " );
 					header( "Content-Length: " . filesize( self::$file_name ) );
 					header( "Content-Type: application/octet-stream;" );
 					readfile( self::$file_name );
@@ -65,22 +65,22 @@ Class WPIMLogging extends WPIMCore {
 			if ( self::is_wpim_action( $key ) && ! in_array( $key, self::$wpim_filters ) ) {
 				self::$wpim_filters[] = $key;
 				// Try and run BEFORE and AFTER
-				add_filter( $key, array( __CLASS__, 'watch_filter' ), - 9999 );
-				add_filter( $key, array( __CLASS__, 'watch_filter' ), 9999 );
+				add_filter( $key, [ __CLASS__, 'watch_filter' ], - 9999 );
+				add_filter( $key, [ __CLASS__, 'watch_filter' ], 9999 );
 			}
 		}
 
 		foreach ( $wp_actions AS $key => $data ) {
 			if ( self::is_wpim_action( $key ) && ! in_array( $key, self::$wpim_actions ) ) {
 				self::$wpim_actions[] = $key;
-				add_action( $key, array( __CLASS__, 'watch_action' ), 9999 );
+				add_action( $key, [ __CLASS__, 'watch_action' ], 9999 );
 			}
 		}
 
 
 		// Attempt to watch any remote_get / remote_post requests
 		// For now, we should be able to just watch the response.
-		add_action( 'http_api_debug', array( __CLASS__, 'http_api_debug' ), 10, 5 );
+		add_action( 'http_api_debug', [ __CLASS__, 'http_api_debug' ], 10, 5 );
 	}
 
 
@@ -105,7 +105,7 @@ Class WPIMLogging extends WPIMCore {
 	 */
 	public static function watch_filter( $value ) {
 		global $wp_filter, $wp_current_filter;
-		$filters = array();
+		$filters = [];
 		foreach ( (array) $wp_current_filter AS $filter ) {
 			if ( self::is_wpim_action( $filter ) ) {
 				$filters[] = $filter;
@@ -119,11 +119,11 @@ Class WPIMLogging extends WPIMCore {
 				} else {
 					$where = debug_backtrace();
 					$where = $where[3];
-					self::log( array(
+					self::log( [
 						'Filter'       => $filter,
 						'Value Before' => self::$wpim_filter_values[ $filter ],
 						'Value After'  => $value
-					), $where );
+					], $where );
 				}
 			}
 		}
@@ -140,7 +140,7 @@ Class WPIMLogging extends WPIMCore {
 	public static function watch_action( $value ) {
 		global $wp_current_filter;
 
-		$actions = array();
+		$actions = [];
 		foreach ( (array) $wp_current_filter AS $action ) {
 			if ( self::is_wpim_action( $action ) ) {
 				$actions[] = $action;
@@ -150,7 +150,7 @@ Class WPIMLogging extends WPIMCore {
 		foreach ( $actions AS $action ) {
 			$where = debug_backtrace();
 			$where = $where[3];
-			self::log( array( 'Action' => $action, 'Value' => $value ), $where );
+			self::log( [ 'Action' => $action, 'Value' => $value ], $where );
 		}
 	}
 
@@ -175,7 +175,7 @@ Class WPIMLogging extends WPIMCore {
 		$title = self::__( 'Logging' );
 		$role  = 'manage_options';
 		$slug  = 'wpim_logging';
-		add_submenu_page( self::MENU, $title, $title, $role, $slug, array( __CLASS__, 'admin_' . $slug ) );
+		add_submenu_page( self::MENU, $title, $title, $role, $slug, [ __CLASS__, 'admin_' . $slug ] );
 	}
 
 	public static function admin_wpim_logging() {
